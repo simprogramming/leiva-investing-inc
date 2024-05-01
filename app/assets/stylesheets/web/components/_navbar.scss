@@ -1,0 +1,73 @@
+.navbar {
+  transition: background-color .7s; /* Smooth transition for the color change */
+  background: #2F3241;
+  &.navbar-white {
+    background-color: #fff; /* Set the background color to white */
+
+    .nav-link {
+      color: #333; /* Change the text color for better contrast */
+      &:hover {
+        color: #1a1a1a; /* Darker shade on hover for better visibility */
+      }
+    }
+  }
+
+  .brand-name {
+    color: #D9D9D9;
+    padding-left: 10px;
+    margin-top: 3px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .nav-link  {
+    color: #D9D9D9;
+    text-transform: uppercase;
+    transition: 0.5s;
+    margin-top: 3px;
+    &:hover{
+      color:white;
+    }
+  }
+
+  .navbar-toggler {
+    background-color: #D9D9D9;
+  }
+
+  .navbar-brand img {
+    height: auto; /* Permet de maintenir le ratio de l'image */
+    width: auto; /* Vous pouvez spécifier une largeur si nécessaire, ex. 100px */
+    max-height: 50px; /* Ajustez la hauteur maximale pour l'aligner avec votre texte de la barre de navigation */
+  }
+
+  /* Style the dropdown itself */
+  .nav-item.dropdown {
+    position: relative;
+    color:#D9D9D9;
+  }
+
+  /* Remove the blue outline on focus for dropdown links */
+  .dropdown-menu a:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Optional: Add a hover effect for dropdown items */
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+
+  /* Show the dropdown menu on hover of the dropdown item */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Style changes for when the dropdown is clicked (Bootstrap may handle this with JS) */
+  .nav-item.dropdown:active .dropdown-menu,
+  .nav-item.dropdown.show .dropdown-menu {
+    display: block;
+  }
+
+}

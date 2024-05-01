@@ -1,33 +1,48 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  change_language: FR
+  errors:
+    messages:
+      unknown: An unknown error has occurred
+  hello: Hello world
+  helpers:
+    filters:
+      active: Enabled
+      all: All
+      inactive: Disabled
+    links:
+      activate: Activate
+      add: Add
+      add_to_cart: Add to cart
+      back: Back
+      cancel: Cancel
+      destroy: Delete
+      discard: Discard
+      edit: Edit
+      export: Export
+      learn_more: Learn more
+      new: New
+      reset: Reset filters
+      search: Search
+      see_our_catalog: Shop all products
+      sign_out: Sign out
+    submit:
+      create: Create
+      filter: Filter
+      submit: Submit
+      update: Update
+    titles:
+      edit: Edit %{model}
+      new: New %{model}
+      newf: New %{model}
+      newm: New %{model}
+      sync: Sync
+  not_allowed: You are not authorized to perform this action.
+  web:
+    layouts:
+      navbar:
+        admin: Admin
+        home: Home
+      application:
+        desktop_available: "This web app is only available on desktop screens."
+        go_laptop: "Go to laptop or desktop to view full content"

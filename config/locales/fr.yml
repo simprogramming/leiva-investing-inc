@@ -1,0 +1,48 @@
+---
+fr:
+  change_language: EN
+  errors:
+    messages:
+      unknown: Une erreur inconnue est survenue
+  hello: Hello world
+  helpers:
+    filters:
+      active: Activé
+      all: Tous
+      inactive: Désactivé
+    links:
+      activate: Activer
+      add: Ajouter
+      add_to_cart: Ajouter au panier
+      back: Retour
+      cancel: Annuler
+      destroy: Supprimer
+      discard: Désactiver
+      edit: Modifier
+      export: Exporter
+      learn_more: En savoir plus
+      new: Nouveau
+      reset: Réinitialiser les filtres
+      search: Rechercher
+      see_our_catalog: Voir tout le catalogue
+      sign_out: Se déconnecter
+    submit:
+      create: Créer
+      filter: Filtrer
+      submit: Enregistrer
+      update: Modifier
+    titles:
+      edit: Modifier %{model}
+      new: Nouveau %{model}
+      newf: Nouvelle %{model}
+      newm: Nouvel %{model}
+      sync: Sync
+  not_allowed: Vous n'êtes pas autorisé à effectuer cette action.
+  web:
+    layouts:
+      navbar:
+        admin: Admin
+        home: Accueil
+      application:
+        desktop_available: "Cette application web n'est disponible que sur les écrans de bureau."
+        go_laptop: "Allez sur un ordinateur portable ou de bureau pour voir le contenu complet"

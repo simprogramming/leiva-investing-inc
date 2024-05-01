@@ -1,0 +1,31 @@
+- model_class = User
+- content_for :title do
+  %h1= model_class.model_name.human count: 2
+
+
+
+= render "admin/shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= sortable_header :first_name, model_class.human_attribute_name(:name)
+      %th= sortable_header :email, model_class.human_attribute_name(:email)
+      %th= sortable_header :role, model_class.human_attribute_name(:role)
+      %th
+
+  %tbody
+    - users.each do |user|
+      %tr
+        %td= link_to user.full_name, admin_user_url(user)
+        %td= user.email
+        %td= user.translated_role
+        %td.text-nowrap
+          - if policy(user).edit?
+            = link_to edit_admin_user_url(user), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(user).destroy?
+            = link_to admin_user_url(user), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?"  } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @users

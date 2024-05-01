@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg px-4">
+  <a href="<%= web_root_path %>" class="navbar-brand px-2">
+    <%= image_tag "Logo.png", height: "40", width: "auto" %>
+    <span class="brand-name">Leiva Investing Inc.</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <a href="<%= web_root_path %>" class="text-decoration-none">
+        <li class="nav-item px-md-3">
+          <div class="nav-link"><%= t(".home") %></div>
+        </li>
+      </a>
+      <% if current_user&.admin? %>
+        <a href="<%= admin_root_path %>" class="text-decoration-none">
+          <li class="nav-item px-md-3">
+            <div class="nav-link"><%= t(".admin") %></div>
+          </li>
+        </a>
+      <% end %>
+<!--      <a href="<%#= web_change_locale_path %>" data-turbo-method="put" class="text-decoration-none">-->
+<!--        <li class="nav-item px-md-3">-->
+<!--          <div class="nav-link"><%#= t("change_language") %></div>-->
+<!--        </li>-->
+<!--      </a>-->
+    </ul>
+  </div>
+</nav>

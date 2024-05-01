@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LeivaInvesting</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "web", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "web", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <%= render "web/layouts/navbar" %>
+    <%= render 'web/layouts/scroll_widget' %>
+    <% if browser.device.mobile? %>
+      <div class="container my-5 mx-auto text-center">
+        <p><%= t(".desktop_available") %></p>
+        <p><%= t(".go_laptop") %></p>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>

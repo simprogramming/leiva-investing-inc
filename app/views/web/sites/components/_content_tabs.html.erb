@@ -1,0 +1,71 @@
+<div class="container my-5 pb-2">
+  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="introduction-tab" data-bs-toggle="tab" data-bs-target="#introduction-tab-pane" type="button" role="tab" aria-controls="introduction-tab-pane" aria-selected="true" style="color: #239C8F">Introduction</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="learning-tab" data-bs-toggle="tab" data-bs-target="#learning-tab-pane" type="button" role="tab" aria-controls="learning-tab-pane" aria-selected="false" style="color: #239C8F">Apprendre à investir</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="world-index-tab" data-bs-toggle="tab" data-bs-target="#world-index-tab-pane" type="button" role="tab" aria-controls="world-index-tab-pane" aria-selected="false" style="color: #239C8F">Index de l'économie mondial</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="blockchain-tab" data-bs-toggle="tab" data-bs-target="#blockchain-tab-pane" type="button" role="tab" aria-controls="blockchain-tab-pane" aria-selected="false" style="color: #239C8F">Blockchain</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="wallet-simulator-tab" data-bs-toggle="tab" data-bs-target="#wallet-simulator-tab-pane" type="button" role="tab" aria-controls="wallet-simulator-tab-pane" aria-selected="false" style="color: #239C8F">Wallet Simulator</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="referral-program-tab" data-bs-toggle="tab" data-bs-target="#referral-program-tab-pane" type="button" role="tab" aria-controls="referral-program-tab-pane" aria-selected="false" style="color: #239C8F">Referral Programs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="consultation-tab" data-bs-toggle="tab" data-bs-target="#consultation-tab-pane" type="button" role="tab" aria-controls="consultation-tab-pane" aria-selected="false" style="color: #239C8F">Consultation</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="introduction-tab-pane" role="tabpanel" aria-labelledby="introduction-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <%= render "web/sites/components/intro_text" %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="learning-tab-pane" role="tabpanel" aria-labelledby="learning-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <%= render 'web/sites/components/learn_to_invest_text' %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="world-index-tab-pane" role="tabpanel" aria-labelledby="world-index-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <%= render "web/sites/components/msci_text" %>
+        <%= render "web/sites/components/world_index_chart" %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="blockchain-tab-pane" role="tabpanel" aria-labelledby="blockchain-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <h4 class="text-center">Bientôt disponible</h4>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="wallet-simulator-tab-pane" role="tabpanel" aria-labelledby="wallet-simulator-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <h4 class="text-center">Bientôt disponible</h4>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="referral-program-tab-pane" role="tabpanel" aria-labelledby="referral-program-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <h4 class="text-center">Bientôt disponible</h4>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="consultation-tab-pane" role="tabpanel" aria-labelledby="consultation-tab" tabindex="0">
+      <div class="container p-3 my-2">
+        <h4 class="text-center">Bientôt disponible</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
