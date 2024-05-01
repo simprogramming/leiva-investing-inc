@@ -4,7 +4,7 @@ module Web
 
     def home
       skip_policy_scope
-      # @stocks = Stock.order(:position)
+      @stocks = Stock.order(:position)
     end
   end
 end

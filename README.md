@@ -1,24 +1,22 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Setup
 
-* Ruby version
+brew install overmind tmux
 
-* System dependencies
+bundle install
 
-* Configuration
+yarn install
 
-* Database creation
+cp _.env .env
 
-* Database initialization
+Run the application (See Running)
+bundle exec rake db:migrate
 
-* How to run the test suite
+bundle exec rake db:test:prepare
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle exec rake db:seed
 
-* Deployment instructions
+Running
 
-* ...
+overmind s -f Procfile.dev

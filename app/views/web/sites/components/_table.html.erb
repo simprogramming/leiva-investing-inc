@@ -1,24 +1,24 @@
-<!--<table class="table table-striped table-dark table-hover">-->
-<!--  <thead class="text-white">-->
-<!--  <tr>-->
-<!--    <th class="ps-3"><%#= Stock.human_attribute_name(:name) %></th>-->
-<!--    <th><%#= Stock.human_attribute_name(:symbol) %></th>-->
-<!--    <th><%#= Stock.human_attribute_name(:price) %></th>-->
-<!--    <th><%#= Stock.human_attribute_name(:dividend) %></th>-->
-<!--    <th><%#= Stock.human_attribute_name(:yield) %></th>-->
-<!--    <th><%#= Stock.human_attribute_name(:distribution) %></th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody class="text-white">-->
-  <%# @stocks.each do | stock | %>
-<!--    <tr>-->
-<!--      <th style="color:#239C8F" class="ps-3"><%#= stock.name %></th>-->
-<!--      <th><%#= stock.symbol %></th>-->
-<!--      <th><%#= "#{stock.price}$" %></th>-->
-<!--      <th><%#= bool_to_text(stock.dividend) %></th>-->
-<!--      <th><%#= stock.yield ? "#{stock.yield}%" : "" %></th>-->
-<!--      <th><%#= stock.translated_distribution %></th>-->
-<!--    </tr>-->
-  <%# end %>
-<!--  </tbody>-->
-<!--</table>-->
+<table class="table table-striped table-dark table-hover">
+  <thead class="text-white">
+  <tr>
+    <th class="ps-3"><%= Stock.human_attribute_name(:name) %></th>
+    <th><%= Stock.human_attribute_name(:symbol) %></th>
+    <th><%= Stock.human_attribute_name(:price) %></th>
+    <th><%= Stock.human_attribute_name(:dividend) %></th>
+    <th><%= Stock.human_attribute_name(:yield) %></th>
+    <th><%= Stock.human_attribute_name(:distribution) %></th>
+  </tr>
+  </thead>
+  <tbody class="text-white">
+  <% @stocks.each do | stock | %>
+    <tr>
+      <th style="color:#239C8F" class="ps-3"><%= stock.name %></th>
+      <th><%= stock.symbol %></th>
+      <th><%= "#{stock.price}$" %></th>
+      <th><%= bool_to_text(stock.dividend) %></th>
+      <th><%= stock.yield ? "#{stock.yield}%" : "" %></th>
+      <th><%= stock.translated_distribution %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

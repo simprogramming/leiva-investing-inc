@@ -1,0 +1,17 @@
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {'data-turbo': "false"}) do |f|
+  %h3.mb-3= t(".sign_in")
+
+  .mb-3
+    = f.input :email, wrapper_class: 'form-floating', label: false do
+      = f.input_field :email, class: 'form-control', value: nil, autofocus: true, autocomplete: "email", placeholder: 'email'
+      = f.label :email
+
+    = f.input :password, wrapper_class: 'form-floating', label: false do
+      = f.input_field :password, class: 'form-control', value: nil, autofocus: true, autocomplete: "current-password", placeholder: 'password'
+      = f.label :password
+
+  = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  = f.button :submit, t(".sign_in"), class: 'btn btn-lg btn-primary w-100'
+
+  .my-3
+    = render "devise/shared/links"

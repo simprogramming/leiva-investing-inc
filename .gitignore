@@ -28,6 +28,7 @@
 /node_modules
 .idea
 .idea/workspace.xml
+.idea/leiva-investing-inc.iml
 /coverage
 
 /app/assets/builds/*

@@ -6,6 +6,6 @@ FactoryBot.define do
     status { "watching" }
     dividend { false }
     position { 1 }
-    api_symbol {"XEI:TSX"}
+    api_symbol { "XEI:TSX" }
   end
 end
