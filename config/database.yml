@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  host: localhost
+  database: dev
+  username: dev
+  password: dev
+  port: 5437
+  <<: *default
+
+test:
+  host: localhost
+  database: test
+  username: dev
+  password: dev
+  port: 5437
+  <<: *default
+
+production:
+  <<: *default
+  database: leiva_investing_inc_production
+  username: leiva_investing_inc
+  password: <%= ENV["LEIVA_INVESTING_INC_DATABASE_PASSWORD"] %>
