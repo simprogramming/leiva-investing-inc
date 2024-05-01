@@ -1,0 +1,24 @@
+$footer_height: 60px;
+
+.footer {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  height: $footer_height;
+  line-height: $footer_height;
+  border-top: 1px solid $gray-400;
+
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    width:  calc(100% - #{$sidebar_width});
+  }
+
+  .sidebar-toggled & {
+    width: calc(100% - #{$sidebar_width});
+
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+  }
+}

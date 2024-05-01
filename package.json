@@ -4,12 +4,14 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
     "esbuild": "^0.20.2",
     "sass": "^1.76.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --target=safari11 --outdir=app/assets/builds",
+    "build:css": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css ./app/assets/stylesheets/web.scss:./app/assets/builds/web.css --no-source-map --load-path=node_modules"
   },
   "packageManager": "yarn@1.22.21"
 }

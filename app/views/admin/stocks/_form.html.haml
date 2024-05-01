@@ -1,0 +1,23 @@
+= simple_form_for [:admin, @stock] do |f|
+  .row
+    .col-md-6
+      = f.input :symbol
+    .col-md-6
+      = f.input :api_symbol
+    .col-md-6
+      = f.input :name
+    .col-md-6
+      = f.input :price
+    .col-md-6.mt-3
+      = f.input :dividend
+    .col-md-6
+      = f.input :yield
+    .col-md-6
+      = f.input :distribution, collection: Stock.translated_distributions, input_html: { autocomplete: "off" }
+    .col-md-6
+      = f.input :position
+    .col-md-6
+      = f.input :status, collection: Stock.translated_statuses
+
+  = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success my-3"
+  = link_to t('.cancel', default: t("helpers.links.cancel")), admin_stocks_url, class: "btn btn-outline-secondary"

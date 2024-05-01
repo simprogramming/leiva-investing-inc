@@ -1,0 +1,49 @@
+- model_class = Stock
+- content_for :title do
+  %h1= model_class.model_name.human count: 2
+
+- content_for :title_actions do
+  - if policy(Stock).update_prices?
+    = link_to update_prices_admin_stocks_url, class: "btn btn-outline-secondary mx-2" do
+      %i.fa-solid.fa-rotate
+      = t "helpers.titles.sync"
+  - if policy(Stock).new?
+    = link_to new_admin_stock_url, class: "btn btn-outline-secondary" do
+      %i.fa-solid.fa-plus
+      = t ".new", default: t("helpers.titles.new", model: model_class.model_name.human)
+
+= render "admin/shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= sortable_header :name, model_class.human_attribute_name(:name)
+      %th= sortable_header :name, model_class.human_attribute_name(:position)
+      %th= sortable_header :symbol, model_class.human_attribute_name(:symbol)
+      %th= sortable_header :price, model_class.human_attribute_name(:price)
+      %th= sortable_header :dividend, model_class.human_attribute_name(:dividend)
+      %th= sortable_header :yield, model_class.human_attribute_name(:yield)
+      %th= sortable_header :distribution, model_class.human_attribute_name(:distribution)
+      %th= sortable_header :status, model_class.human_attribute_name(:status)
+      %th
+
+  %tbody
+    - stocks.each do |stock|
+      %tr
+        %td= link_to stock.name, admin_stock_url(stock)
+        %td= stock.position
+        %td= stock.symbol
+        %td= stock.price
+        %td= bool_to_text(stock.dividend)
+        %td= stock.yield ? "#{stock.yield}%" : ""
+        %td= stock.translated_distribution
+        %td= stock.translated_status
+        %td.text-nowrap
+          - if policy(stock).edit?
+            = link_to edit_admin_stock_url(stock), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(stock).destroy?
+            = link_to admin_stock_url(stock), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?"  } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @stocks
