@@ -1,6 +1,5 @@
 # :nocov:
 require "json"
-require "dotenv/load"
 require "uri"
 require "net/http"
 
