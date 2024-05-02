@@ -1,0 +1,37 @@
+- model_class = Wallet
+- content_for :title do
+  %h1= model_class.model_name.human count: 2
+
+- content_for :title_actions do
+  - if policy(Wallet).new?
+    = link_to new_admin_wallet_url, class: "btn btn-outline-secondary" do
+      %i.fa-solid.fa-plus
+      = t ".new", default: t("helpers.titles.new", model: model_class.model_name.human)
+
+= render "admin/shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= sortable_header :name, model_class.human_attribute_name(:name)
+      %th= sortable_header :user, model_class.human_attribute_name(:user)
+      %th= sortable_header :cash, model_class.human_attribute_name(:cash)
+      %th= model_class.human_attribute_name(:positions)
+      %th
+
+  %tbody
+    - wallets.each do |wallet|
+      %tr
+        %td= link_to wallet.name, admin_wallet_url(wallet)
+        %td= "#{wallet.user.first_name} #{wallet.user.last_name}"
+        %td= wallet.cash
+        %td= 0
+        %td.text-nowrap
+          - if policy(wallet).edit?
+            = link_to edit_admin_wallet_url(wallet), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(wallet).destroy?
+            = link_to admin_wallet_url(wallet), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?"  } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @wallets

@@ -25,6 +25,11 @@ en:
         role_list:
           admin: Admin
           user: User
+      wallet:
+        cash: Money
+        name: Strategy name
+        position: Positions
+        user: User
     models:
       stock:
         one: Stock
@@ -32,6 +37,9 @@ en:
       user:
         one: User
         other: Users
+      wallet:
+        one: Wallet
+        other: Wallets
     notices:
       default:
         archived_successfully: "%{model} archived successfully"

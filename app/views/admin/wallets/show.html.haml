@@ -1,0 +1,24 @@
+- model_class = Wallet
+- content_for :title do
+  %h1= t '.title', :default => model_class.model_name.human
+
+%dl.row
+  %dt.col-sm-3= model_class.human_attribute_name :name
+  %dd.col-sm-9= wallet.name
+  %dt.col-sm-3= model_class.human_attribute_name :user
+  %dd.col-sm-9= "#{wallet.user.first_name} #{wallet.user.last_name}"
+  %dt.col-sm-3= model_class.human_attribute_name :cash
+  %dd.col-sm-9= wallet.cash
+  %dt.col-sm-3= model_class.human_attribute_name :position
+  %dd.col-sm-9= 0
+    
+
+- if policy(wallet).index?
+  = link_to admin_wallets_url, class: "btn btn-outline-secondary mx-1" do
+    %i.fa-solid.fa-chevron-left
+    = t('.back', :default => t("helpers.links.back"))
+
+- if policy(wallet).edit?
+  = link_to edit_admin_wallet_url(@wallet), class: "btn btn-primary mx-1" do
+    %i.fa-solid.fa-edit
+    = t('.edit', :default => t("helpers.links.edit"))

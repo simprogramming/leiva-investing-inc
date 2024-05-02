@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @wallet] do |f|
+  .row
+    .col-md-6
+      = f.input :name
+    .col-md-6
+      = f.input :user_id, label: Wallet.human_attribute_name(:user) , collection: User.all, label_method: ->(u) { "#{u.first_name} #{u.last_name}" }, value_method: :id
+
+  = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success my-3"
+  = link_to t('.cancel', default: t("helpers.links.cancel")), admin_wallets_url, class: "btn btn-outline-secondary"
