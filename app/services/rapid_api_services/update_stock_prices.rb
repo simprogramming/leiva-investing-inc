@@ -35,4 +35,4 @@ module RapidApiServices
       end
     end
   end
-end # :nocov:
+end
