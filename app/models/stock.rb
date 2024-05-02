@@ -1,6 +1,8 @@
 class Stock < ApplicationRecord
   searchable :name, :symbol
 
+  has_many :positions, dependent: :destroy
+
   validates :name, :symbol, :price, :status, :api_symbol, presence: true
 
   enum status: { buying: "buying", selling: "selling", watching: "watching" }

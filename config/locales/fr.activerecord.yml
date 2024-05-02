@@ -2,6 +2,9 @@
 fr:
   activerecord:
     attributes:
+      position:
+        entry: Prix d'entré
+        size: Nombre de stocks
       stock:
         api_symbol: Symbole pour l'Api
         distribution_list:
@@ -31,6 +34,9 @@ fr:
         position: Positions
         user: Utilisateur
     models:
+      position:
+        one: Position
+        other: Positions
       stock:
         one: Stock
         other: Stocks

@@ -8,6 +8,7 @@ resources :stocks do
   end
 end
 
+resources :positions
 resources :users
 resources :wallets
 root "admin#admin"

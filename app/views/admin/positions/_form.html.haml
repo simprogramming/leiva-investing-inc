@@ -1,0 +1,13 @@
+= simple_form_for [:admin, @position] do |f|
+  .row
+    .col-md-6
+      = f.input :wallet_id , collection: Wallet.all, label_method: ->(u) { "#{u.name}" }, value_method: :id
+    .col-md-6
+      = f.input :stock_id , collection: Stock.all, label_method: ->(u) { "#{u.symbol}" }, value_method: :id
+    .col-md-6
+      = f.input :entry
+    .col-md-6
+      = f.input :size
+
+  = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success my-3"
+  = link_to t('.cancel', default: t("helpers.links.cancel")), admin_positions_url, class: "btn btn-outline-secondary"
