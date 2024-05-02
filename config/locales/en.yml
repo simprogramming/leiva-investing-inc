@@ -40,9 +40,9 @@ en:
   not_allowed: You are not authorized to perform this action.
   web:
     layouts:
+      application:
+        desktop_available: This web app is only available on desktop screens.
+        go_laptop: Go to laptop or desktop to view full content
       navbar:
         admin: Admin
         home: Home
-      application:
-        desktop_available: "This web app is only available on desktop screens."
-        go_laptop: "Go to laptop or desktop to view full content"
