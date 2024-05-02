@@ -1,0 +1,37 @@
+- model_class = Position
+- content_for :title do
+  %h1= model_class.model_name.human count: 2
+
+- content_for :title_actions do
+  - if policy(Position).new?
+    = link_to new_admin_position_url, class: "btn btn-outline-secondary" do
+      %i.fa-solid.fa-plus
+      = t ".new", default: t("helpers.titles.new", model: model_class.model_name.human)
+
+= render "admin/shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= Stock.human_attribute_name(:symbol)
+      %th= Wallet.model_name.human
+      %th= sortable_header :entry, model_class.human_attribute_name(:entry)
+      %th= sortable_header :size, model_class.human_attribute_name(:size)
+      %th
+
+  %tbody
+    - positions.each do |position|
+      %tr
+        %td= link_to position.stock.symbol, admin_position_url(position)
+        %td= position.wallet.name
+        %td= position.entry
+        %td= position.size
+        %td.text-nowrap
+          - if policy(position).edit?
+            = link_to edit_admin_position_url(position), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(position).destroy?
+            = link_to admin_position_url(position), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?"  } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @positions

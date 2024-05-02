@@ -17,6 +17,18 @@
             %i.fa-solid.fa-money-bill
             = Stock.model_name.human(count: 2)
 
+      - if policy(Wallet).index?
+        %li.nav-item
+          = link_to admin_wallets_path, class: "nav-link #{controller_name == "wallets" ? "active" : ""}" do
+            %i.fa-solid.fa-wallet
+            = Wallet.model_name.human(count: 2)
+
+      - if policy(Position).index?
+        %li.nav-item
+          = link_to admin_positions_path, class: "nav-link #{controller_name == "positions" ? "active" : ""}" do
+            %i.fa-solid.fa-chart-line
+            = Position.model_name.human(count: 2)
+
   = link_to t("change_language"), admin_change_locale_path, data: { "turbo-method": "put" }, class: "btn nav-link p-0 text-start mt-2"
 
   - if user_signed_in?

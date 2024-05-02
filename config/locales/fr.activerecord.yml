@@ -2,6 +2,9 @@
 fr:
   activerecord:
     attributes:
+      position:
+        entry: Prix d'entré
+        size: Nombre de stocks
       stock:
         api_symbol: Symbole pour l'Api
         distribution_list:
@@ -25,13 +28,24 @@ fr:
         role_list:
           admin: Administrateur
           user: User
+      wallet:
+        cash: Argent
+        name: Nom de la stratégie
+        position: Positions
+        user: Utilisateur
     models:
+      position:
+        one: Position
+        other: Positions
       stock:
         one: Stock
         other: Stocks
       user:
         one: Utilisateur
         other: Utilisateurs
+      wallet:
+        one: Portefeuille
+        other: Portefeuilles
     notices:
       default:
         archived_successfully: "%{model} archivé(e) avec succès"
